@@ -36,8 +36,6 @@ app.get('/', (req, res) => {
     res.send("API Working")
 })
 
-// ✅ ADDED - export for Vercel
-export default app
 
 // THIS PART IS FOR RENDER
 const port = process.env.PORT || 4000;
