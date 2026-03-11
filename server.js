@@ -39,8 +39,12 @@ app.get('/', (req, res) => {
 // ✅ ADDED - export for Vercel
 export default app
 
-// ✅ CHANGED - only listen locally
-if (process.env.NODE_ENV !== 'production') {
-    const port = process.env.PORT || 4000
-    app.listen(port, () => console.log('Server started on PORT : ' + port))
-}
+// THIS PART IS FOR RENDER
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => {
+    console.log('Server is live on port: ' + port);
+});
+
+// THIS PART IS FOR VERCEL (Keep it just in case)
+export default app;
